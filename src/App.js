@@ -23,7 +23,7 @@ class App extends Component {
     getMovies = async (value) => {
 
         try {
-            await fetch(`/api/movies/search?keyword=${value}`)
+            await fetch(`https://sf-movies-backend.herokuapp.com/api/movies/search?keyword=${value}`)
                 .then(response => response.json())
                 .then(movies => {
                     this.setState({movies})});
@@ -73,7 +73,7 @@ class App extends Component {
         });
         try {
             await fetch(
-                `/api/movies/import`,
+                `https://sf-movies-backend.herokuapp.com/api/movies/import`,
                 {
                     method: 'POST'
                 }).then(response => {
